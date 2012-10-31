@@ -1,0 +1,34 @@
+{
+  "name": "git-exec",
+  "description": "Thin wrapper around the git binary.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/alexjeffburke/node-git-exec",
+  "author": {
+    "name": "Alex J Burke",
+    "email": "alex@alexjeffburke.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexjeffburke/node-git-exec.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexjeffburke/node-git-exec/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/alexjeffburke/node-git-exec/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/git-exec",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.17"
+  },
+  "keywords": []
+}
