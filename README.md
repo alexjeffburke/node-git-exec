@@ -41,6 +41,8 @@ repo.exec('pull', null, function() {
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
 
 ## Release History
+* 0.1.2 - make sure cwd argument we pass to exec is made absolute
+* 0.1.1 - cleanup the code; no functional changes
 * 0.1.0 - initial release
 
 ## License
