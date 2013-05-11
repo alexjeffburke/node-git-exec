@@ -99,11 +99,12 @@ unit tests for any new or changed functionality.
 Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
 
 ## Release History
+* 0.2.1 - add tests to assert behaviour with associated fixups
 * 0.2.0 - add a new repo() method to the API
 * 0.1.2 - make sure cwd argument we pass to exec is made absolute
 * 0.1.1 - cleanup the code; no functional changes
 * 0.1.0 - initial release
 
 ## License
-Copyright (c) 2012 Alex J Burke
+Copyright (c) 2013 Alex J Burke
 Licensed under the MIT license.
