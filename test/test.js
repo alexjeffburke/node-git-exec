@@ -39,6 +39,7 @@ function checkRepoObject(test, repo, path) {
     test.ok(doesExist, 'test repository was created');
     test.ok(repo, 'repository object created');
     test.ok(repo instanceof Git, 'repository object has correct type');
+    test.ok(repo.directory, 'repository object path was set');
   });
 }
 
@@ -57,6 +58,15 @@ exports.testCloneAtPath = function(test) {
 
   Git.clone('.', repo_path, function(repo) {
     checkRepoObject(test, repo, repo_path);
+    test.done();
+  });
+};
+
+exports.testCloneWithoutPath = function(test) {
+  var self = this;
+
+  Git.clone('git://github.com/alexjeffburke/node-git-exec.git', null, function(repo) {
+    test.strictEqual(repo, null, 'cannot clone without a target dir');
     test.done();
   });
 };
