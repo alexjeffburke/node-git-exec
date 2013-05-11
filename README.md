@@ -15,7 +15,7 @@ further git commands execute in the correct context.
 
 ## Examples
 
-### Cloning a remote repository and switching to the 'dev' branch
+### Cloning a remote repository and checkout of origin/dev
 ```javascript
 var Git = require('git-exec');
 Git.clone(a-repo.git, 'dir', function(repo) {
@@ -74,7 +74,9 @@ require('git-exec').repo('./path/to/repo').exec('branch', ['dev'], function() {
 ```
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add
+unit tests for any new or changed functionality.
+Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
 
 ## Release History
 * 0.2.0 - add a new repo() method to the API
