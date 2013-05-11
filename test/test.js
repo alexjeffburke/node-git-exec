@@ -19,14 +19,6 @@ var TEST_REPO = 'test_repo';
 var exists = fs.exists || require('path').exists;
 
 module.exports = exports = {
-  setUp: function (callback) {
-    var self = this;
-
-    Git.init(TEST_REPO, null, function(repo) {
-      self.repo = repo;
-      callback();
-    });
-  },
   tearDown: function (callback) {
     rimraf(TEST_REPO, function() {
       callback();
@@ -34,13 +26,28 @@ module.exports = exports = {
   }
 };
 
+function checkRepoObject(test, repo) {
+  exists(TEST_REPO, function(doesExist) {
+    test.ok(doesExist, 'test repository was created');
+    test.ok(repo, 'repository object created');
+    test.ok(repo instanceof Git, 'repository object has correct type');
+  });
+}
+
+exports.testClone = function(test) {
+  var self = this;
+
+  Git.clone('.', TEST_REPO, function(repo) {
+    checkRepoObject(test, repo);
+    test.done();
+  });
+};
+
 exports.testInit = function(test) {
   var self = this;
 
-  exists(TEST_REPO, function(doesExist) {
-    test.ok(doesExist, 'test repository was created');
-    test.ok(self.repo, 'repository object created');
-    test.ok(self.repo instanceof Git, 'repository object has correct type');
+  Git.init(TEST_REPO, null, function(repo) {
+    checkRepoObject(test, repo);
     test.done();
   });
 };
