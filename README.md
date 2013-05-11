@@ -5,13 +5,33 @@ This library provides a very simple wrapper around the git binary.
 Install the module with: `npm install git-exec`
 
 ## Documentation
+The library is used by constructing an object which represents a
+git repository on the system.
+
 The majority of the interaction involves an exec() method which is
-involved on a instances of the library. This method is relatively stupid in
+invoked on instances of such objects. This method is relatively stupid in
 that we do not try to parse the output or validate commands invoked.
 
 However, we do take care to provide a means to both init / clone git
 repositories and we set the working directory correctly such that
 further git commands execute in the correct context.
+
+### repo
+This method will construct a repo object at the specified directory.
+
+### init/clone
+These methods will return a repo object on success as the first argument to the
+callback passed to them or null on error.
+
+```javascript
+function callback(repo) {
+  if (repo !== null) {
+    // valid repo
+  } else {
+    // an error occurred
+  }
+}
+```
 
 ## Examples
 
