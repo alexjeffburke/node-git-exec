@@ -27,6 +27,34 @@ Git.clone(a-repo.git, 'dir', function(repo) {
 });
 ```
 
+### Intialising a local repository in CWD
+
+```javascript
+var Git = require('git-exec');
+Git.init('my-new-repo', null, function(repo) {
+  // ... operations on repo object
+});
+```
+
+### Intialising a local repository at given path
+```javascript
+var Git = require('git-exec');
+Git.init(null, '/path/to/repo', function(repo) {
+  // ... operations on repo object
+});
+```
+
+As an alternative, init also supports a named repo at a specific path. Thus
+for a repo named 'my-new-repo' at '/path/to' such that the full path to the
+repo is /path/to/my-new-repo call init as follows:
+
+```javascript
+var Git = require('git-exec');
+Git.init('my-new-repo', '/path/to', function(repo) {
+  // ... operations on repo object
+});
+```
+
 ### Using a local git repository
 ```javascript
 var Git = require('git-exec');

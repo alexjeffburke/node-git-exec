@@ -70,7 +70,17 @@ exports.testInit = function(test) {
   });
 };
 
-exports.testInitAtPath = function(test) {
+exports.testInitAtPathInDirArg = function(test) {
+  var self = this;
+  var repo_path = path.join(TEST_PATH, TEST_REPO);
+
+  Git.init(null, repo_path, function(repo) {
+    checkRepoObject(test, repo, repo_path);
+    test.done();
+  });
+};
+
+exports.testInitAtPathSplit = function(test) {
   var self = this;
   var repo_path = path.join(TEST_PATH, TEST_REPO);
 
