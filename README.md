@@ -38,7 +38,7 @@ function callback(repo) {
 ### Cloning a remote repository and checkout of origin/dev
 ```javascript
 var Git = require('git-exec');
-Git.clone(a-repo.git, 'dir', function(repo) {
+Git.clone('a-repo.git', 'dir', function(repo) {
   // NOTE the callback is given a reference to the git repository
 
   repo.exec('checkout', ['-t origin/dev'], function() {
