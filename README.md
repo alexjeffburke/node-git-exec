@@ -1,4 +1,9 @@
+# :no_entry: DEPRECATED
+
+I am no longer maintaining this code. A large number of alternatives have become available in the community and at this point it does not appear there is any value to be provided by this implementation.
+
 # git-exec
+
 This library provides a very simple wrapper around the git binary.
 
 ## Getting Started
